@@ -13,7 +13,9 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'users', loadChildren: './users/users.module#UsersPageModule' },
   { path: 'userview/:id', loadChildren: './userview/userview.module#UserviewPageModule' },
-  { path: 'user-create', loadChildren: './user-create/user-create.module#UserCreatePageModule' }
+  { path: 'user-create', loadChildren: './user-create/user-create.module#UserCreatePageModule' },
+  { path: 'user-edit/:id', loadChildren: './user-edit/user-edit.module#UserEditPageModule' },
+  { path: 'user-delete/:id', loadChildren: './user-delete/user-delete.module#UserDeletePageModule' }
 
 ];
 

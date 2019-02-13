@@ -23,15 +23,19 @@
     
   </ion-fab-button>
 
-  <ion-fab-list side="top">
-    <ion-fab-button color="light">
+  <ion-fab-list side="start" *ngIf="user">
+
+    <ion-fab-button color="light" [routerLink]="['/user-edit', user.id]">
       <ion-icon name="create"></ion-icon>
     </ion-fab-button>
     
-    <ion-fab-button color="danger">
+    <ion-fab-button color="danger" [routerLink]="['/user-delete', user.id]">
       <ion-icon name="trash">
       </ion-icon>
     </ion-fab-button>
+    
   </ion-fab-list>
+
+  </ion-fab>
 
 </ion-content>
