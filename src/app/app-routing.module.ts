@@ -11,7 +11,10 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'logout', loadChildren: './logout/logout.module#LogoutPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
-  { path: 'users', loadChildren: './users/users.module#UsersPageModule' }
+  { path: 'users', loadChildren: './users/users.module#UsersPageModule' },
+  { path: 'userview/:id', loadChildren: './userview/userview.module#UserviewPageModule' },
+  { path: 'user-create', loadChildren: './user-create/user-create.module#UserCreatePageModule' }
+
 ];
 
 @NgModule({

@@ -24,6 +24,7 @@ export class UsersPage implements OnInit {
     this.usersService.users().subscribe(
       (response:any)=>{
         this.users = response.users;
+        console.log(response);
       }
     )
   }

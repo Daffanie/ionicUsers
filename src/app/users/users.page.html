@@ -9,7 +9,7 @@
 
 <ion-content padding>
   <ion-list *ngIf="users">
-    <ion-item *ngFor="let user of users">
+    <ion-item *ngFor="let user of users" [routerLink]="['/userview', user_id]">
       <ion-label>{{ user.username }}</ion-label>
     </ion-item>
   </ion-list>

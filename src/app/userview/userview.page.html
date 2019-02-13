@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>userview</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="user">
+    <ion-card-header>
+      <ion-card-title>{{ user.first_name }} {{ user.last_name }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item>{{ user.username }}</ion-item>
+      <ion-item>{{ user.email }}</ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button color="secondary"> 
+      <ion-icon name="arrow-dropleft"></ion-icon>
+  </ion-fab-button>
+    
+  </ion-fab-button>
+
+  <ion-fab-list side="top">
+    <ion-fab-button color="light">
+      <ion-icon name="create"></ion-icon>
+    </ion-fab-button>
+    
+    <ion-fab-button color="danger">
+      <ion-icon name="trash">
+      </ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+
+</ion-content>
