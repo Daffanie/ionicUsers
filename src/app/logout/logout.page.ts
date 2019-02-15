@@ -1,27 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
 import { AuthService } from '../auth.service';
-import { Router } from '@angular/router';
+
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-logout',
   templateUrl: './logout.page.html',
   styleUrls: ['./logout.page.scss'],
 })
-export class LogoutPage implements OnInit {
+export class LogoutPage {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private cookieServer: CookieService
   ) { }
 
-  ngOnInit() {}
 
-  onSubmit(): void{
+  ionViewWillEnter() {
+    this.logout();
+  }
+
+  logout(): void{
     this.authService.logOut().subscribe(
-      (response) => {
-        this.router.navigate(['/login']);
+      (response: any) => {
+        this.cookieServer.delete('sugar', '/ionicUsers');
+        window.location.href='/ionicUsers';
       }
     );
   }
-
+ 
 }

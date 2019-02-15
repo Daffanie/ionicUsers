@@ -18,7 +18,7 @@ export class UsersService {
     let l = window.location;
     let host:string;
     
-    if(l.port >= '8101'){
+    if(l.port >= '8100'){
       host = 'localhost:3000';
     }else{
       host = l.hostname + ((l.port.length>0)?':' + l.port:'');

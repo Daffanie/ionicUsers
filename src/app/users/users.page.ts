@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 import { UsersService } from '../users.service';
 import { User } from '../user'; 
@@ -8,16 +10,23 @@ import { User } from '../user';
   templateUrl: './users.page.html',
   styleUrls: ['./users.page.scss'],
 })
-export class UsersPage implements OnInit {
+export class UsersPage {
 
   users:User;
 
   constructor(
-    private usersService: UsersService
+    private usersService: UsersService,
+    private cookieService: CookieService,
+    private router: Router
   ) { }
 
-  ngOnInit() {
+  ionViewWillEnter() {
+    if(this.cookieService.check('sugar')==false){
+      this.router.navigate(['/login'])
+    }else{
     this.getUsers();
+    }
+  
   }
 
   getUsers(): void{
